@@ -1,0 +1,24 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    vector<long long> A = {2, 5, 3, 8, 1, 4};
+    int n = A.size();
+
+    auto it_max = max_element(A.begin(), A.end());
+    int idx_max = it_max - A.begin();
+    long long prod = 1;
+    for(int i = 0; i < idx_max; i++) prod *= A[i];
+    int cnt = n - idx_max - 1;
+
+    auto it_min = min_element(A.begin(), A.end());
+    int idx_min = it_min - A.begin();
+
+    cout << "Произведение до максимума: " << prod << "\n";
+    cout << "Количество после максимума: " << cnt << "\n";
+    cout << "Максимум: " << *it_max << " (индекс " << idx_max << ")\n";
+    cout << "Минимум: " << *it_min << " (индекс " << idx_min << ")\n";
+    return 0;
+}
