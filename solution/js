@@ -1,0 +1,16 @@
+const A = [2, 5, 3, 8, 1, 4];
+const n = A.length;
+
+const mx = Math.max(...A);
+const idxMax = A.indexOf(mx);
+let prod = 1;
+for (let i = 0; i < idxMax; i++) prod *= A[i];
+const cnt = n - idxMax - 1;
+
+const mn = Math.min(...A);
+const idxMin = A.indexOf(mn);
+
+console.log(`Произведение до максимума: ${prod}`);
+console.log(`Количество после максимума: ${cnt}`);
+console.log(`Максимум: ${mx} (индекс ${idxMax})`);
+console.log(`Минимум: ${mn} (индекс ${idxMin})`);
