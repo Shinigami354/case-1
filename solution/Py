@@ -1,0 +1,13 @@
+A = [2, 5, 3, 8, 1, 4]
+mx = max(A)
+i = A.index(mx)
+prod = 1
+for x in A[:i]:
+    prod *= x
+cnt = len(A) - i - 1
+mn = min(A)
+j = A.index(mn)
+print(f"Произведение до максимума: {prod}")
+print(f"Количество после максимума: {cnt}")
+print(f"Максимум: {mx} (индекс {i})")
+print(f"Минимум: {mn} (индекс {j})")
